@@ -1,0 +1,7 @@
+---
+Name: dogwalksroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'walks/near-you/result/$Action/$ID': 'WalkNear_Controller'

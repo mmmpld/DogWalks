@@ -1,0 +1,36 @@
+// COMPASS
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+
+// FONTS
+@import url('http://fonts.googleapis.com/css?family=Finger+Paint');
+@import url('http://fonts.googleapis.com/css?family=Lobster');
+@import url('http://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('http://fonts.googleapis.com/css?family=Alef');
+@import url('http://fonts.googleapis.com/css?family=Merienda:400,700');
+@import url('http://fonts.googleapis.com/css?family=Paprika');
+
+// VARIABLES
+$textColor:#444;
+$buttonColor:#444;
+$darkBackground:#dad9d9;
+$lightBackground:#ededed;
+$borderColor:#dad9d9;
+$borderDarkColor:#afafaf;
+$errorBackColor:rgb(253, 224, 220);
+$errorBorderColor:rgb(206, 65, 65);
+$warningBackColor:#FFA259;
+$successBorderColor:#0c0;
+
+@mixin menuFont {
+  font-family:'Merienda', 'Finger Paint', cursive;
+}
+@mixin headerFont {
+  font-family: Lobster, "CamboRegular", Georgia, "Times New Roman", Times, serif;
+}
+@mixin buttonFont {
+  font-family:'Merienda', 'Finger Paint', cursive;
+  font-size: 1.2em;
+  font-weight:700;
+}

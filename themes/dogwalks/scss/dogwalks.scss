@@ -1,0 +1,798 @@
+// OTHER SHEETS
+@import 'reset.css';
+@import 'includes.scss';
+@import 'typography.css';
+@import 'form.scss';
+@import 'layout.scss';
+@import 'magnific-popup.scss';
+@import 'rateit.css';
+
+body {
+  background-image:url('../images/background.png');
+}
+
+.main aside nav.secondary h3{ // overly specific to overide typography.css
+  @include menuFont;
+}
+
+.main {
+  @include box-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.header .primary li.section, .header .primary li.current {
+  overflow:hidden;
+}
+.header .primary li.section:after, .header .primary li.current:after {
+  text-shadow:0 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header, .footer {
+  background:none;
+}
+
+.brand h1, .header .primary li a {
+  color:$textColor;
+  @include menuFont;
+}
+.brand h1 img {max-width:100%}
+.header .primary li.section a, .header .primary li.current a, .header .primary li a:hover {
+  color:#265c22;
+}
+
+.typography h2 {
+  margin-bottom:5px;
+}
+
+// navigation pane
+nav.secondary {
+  h3 {
+    a {
+      color:#aaa;
+      text-decoration:none;
+      &:hover {
+        color:#aaa;
+      }
+    }
+  }
+  .text {
+    @include menuFont;
+    text-transform:uppercase;
+  }
+}
+
+.clear {
+  clear:both;
+}
+
+.wrapper {
+  overflow:hidden;
+  position:relative;
+}
+
+strong {
+  font-weight:700 !important;
+}
+
+// Google Map
+h5.mapInfoHeader {
+  margin:0 15px;
+}
+#map-static {
+  img {
+    width:100%;
+  }
+}
+#Directions {
+  display:none;
+  page-break-inside: avoid;
+  h2 {
+    margin-top:20px;
+  }
+  #DirectionsPanel {
+    .adp, .adp table, .adp-list {
+      font-family:inherit;
+    }
+    table.adp-placemark {
+      td {
+        border:0;
+        vertical-align:middle;
+      }
+      img {
+        padding:2px 6px 0;
+      }
+    }
+    position:relative;
+    table {
+      width:100%;
+    }
+    .adp-legal {
+      position:absolute;
+      right:0;
+    }
+  }
+}
+#DirectionsErrors {
+  div {
+    background-color:$errorBackColor;
+    border:1px solid $errorBorderColor;
+    padding:10px;
+  }
+}
+#DirectionsSearch {
+  position:relative;
+  height:38px;
+  background-color:#fff;
+  border: 1px solid $borderColor;
+  width:auto;
+  max-width:inherit;
+  button {
+    height:40px;
+    position:absolute;
+    right:-1px;
+    top:-1px;
+  }
+}
+#DirectionsAddress {
+  padding-right:60px;
+  padding-left:10px;
+  text-overflow:ellipsis;
+  background-color:transparent;
+  border:0;
+  max-width:100%;
+  height:40px;
+  @include box-sizing(border-box);
+}
+#mapQRButton {
+  padding:0;
+  &:hover {
+    cursor:pointer;
+    text-decoration:underline;
+  }
+}
+
+// icons
+.icon {
+  font-family:WebSymbolsRegular !important;
+}
+[data-icon]:after {
+  font-family: WebSymbolsRegular;
+  content: attr(data-icon);
+  font-size:1.5em;
+  margin:0 0.5em;
+}
+
+// currency input
+.currencyNoSymbol {
+  padding-left:15px;
+}
+.currencySymbol {
+  font-size: 15px;
+  color:lighten($textColor, 20%);
+  padding: 6px 0 0 6px;
+  position: absolute;
+}
+
+// table
+table.layoutTable {
+  border:0;
+  padding:0;
+  tr {
+    background-color:transparent !important;
+  }
+  td {
+    border:0;
+    padding:0;
+  }
+}
+
+// search
+.search-bar form input.search {
+  width: 155px;
+  max-width:400px;
+  font-size:15px;
+  padding: 5px 34px 5px 10px;
+  color: #888;
+  margin: 0;
+  border: none;
+  border-radius: 14px;
+  background: #fff;
+}
+#SearchForm_SearchForm_action_results {
+  border:0;
+  @include box-shadow(none);
+}
+
+article, #Map, #Gallery, #LocalWalks {
+  margin-bottom:20px;
+  clear:both;
+}
+
+#Breadcrumbs {
+  margin:8px 0 9px 0;
+  a {
+    text-decoration:none;
+    color:$textColor;
+    &:hover {
+      text-decoration:underline;
+      color:#b80000;
+    }
+  }
+}
+
+.typography h1 {
+  margin:0;
+}
+
+// html star ratings formatting. js star formating handled by it's own sheet
+#Form_ranking_info {
+  display:inline-block;
+  vertical-align:top;
+}
+#Form_ratingsaveratings_rate, #Form_ratingsaveratings {
+  width:auto;
+}
+#Form_ratingsaveratings .middleColumn, #rate .left, #Form_ratingsaveratings .Actions, #Form_ratingsaveratings fieldset {
+  display:inline;
+}
+#Form_ratingsaveratings .Actions:after {
+  content:"";
+}
+#Form_ratingsaveratings_action_results {
+  float:none;
+}
+.rateHeader {
+  display:inline-block;
+}
+
+// no java
+noscript {
+  display:block;
+  background-color:$errorBackColor;
+  border:1px solid $errorBorderColor;
+  padding:10px;
+}
+
+// location search or select
+#Location {
+  text-align:center;
+}
+#LocationSearch {
+  margin:20px 0;
+  h1 {
+    border:0;
+    margin-bottom:15px;
+  }
+  form {
+    width:auto;
+    max-width:inherit;
+  }
+  input {
+    vertical-align:top;
+    width:80%;
+    max-width:600px;
+    @include buttonFont;
+    //font-size:22px;
+    //line-height:24px;
+    font-weight:normal;
+  }
+  button {
+    //font-size:22px;
+    //line-height:24px;
+    float:none;
+    margin:0 0 0 10px;
+  }
+}
+#LocationAreas {
+  ul {
+    margin:0;
+  }
+  li {
+    display:inline-block;
+  }
+}
+
+// Suggest Form Page
+form.walkForm {
+  width:100%;
+  max-width:100%;
+  .middleColumn {
+    max-width:400px;
+  }
+  .requiredText {
+    color:#b80000;
+    font: {
+      style:italic;
+      weight:normal;
+    }
+  }
+  textarea {
+    height:200px;
+    font-family:inherit;
+  }
+  table {
+    width:100%;
+  }
+  td {
+    width:50%;
+    padding-right:5px;
+    padding-left:5px;
+    vertical-align:bottom;
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      padding-right:0;
+    }
+  }
+  label + span {
+    font-style:italic;
+    margin-bottom:5px;
+    display:block;
+  }
+  fieldset {
+    margin-bottom:30px;
+  }
+  input, textarea {
+    @include box-sizing(border-box);
+  }
+  #Address {
+    margin-bottom:0;
+    .middleColumn {
+      position:relative;
+    }
+    input {
+      line-height: 17px;
+      max-width:100%;
+      text-overflow:ellipsis;
+      padding-right:40px;
+    }
+    button {
+      margin: 0;
+      font-size: 15px;
+      box-sizing: border-box;
+      position: absolute;
+      right: 0;
+      top:0;
+      line-height: 17px;
+    }
+    &.mapShowing .middleColumn {
+      max-width:100%;
+    }
+  }
+  #Map {
+    margin-top:0;
+    height:0px;
+    overflow:hidden;
+  }
+  #Cost {
+    td {
+      width:auto;
+    }
+    .CostDescriptionTD {
+      width:100%;
+    }
+  }
+  .Actions:after {
+    content:none;
+  }
+}
+#Walk-Image.js {
+  .middleColumn {
+    border:1px solid $borderColor;
+    @include box-sizing(border-box);
+    overflow:hidden;
+  }
+  #ImageThumb {
+    background:$darkBackground url('../images/dropbox-background.png') top left no-repeat;
+    margin-right:26px;
+    vertical-align:middle;
+    width:55px;
+    height:40px;
+    margin:30px 22.5px;
+    &.drop {
+      background-position:bottom left;
+    }
+  }
+  #ImageDrop {
+    background-color:$darkBackground;
+    margin-right:26px;
+    vertical-align:middle;
+    background:$darkBackground url('../images/dropbox-background.png') center center no-repeat;
+    display:inline-block;
+    width:100px;
+    height:100px;
+    &.drop {
+      background-color:#0c0;
+      background-image:url('../images/dropbox-background-over.png');
+    }
+  }
+  input {
+    vertical-align:middle;
+  }
+  #DefaultUpload input {
+    padding:6px 5px;
+  }
+  button {
+    float:none;
+  }
+}
+#UploadedFiles, #UploadedErrors {
+  max-width:400px;
+  margin:0;
+  display:block;
+  li {
+    margin:0;
+  }
+  input {
+    border-bottom:0;
+    vertical-align:baseline;
+    padding-right:30px;
+    text-overflow:ellipsis;
+    transition: background-color 2000ms ease-in;
+    &.success {
+      transition: background-color 200ms linear;
+    }
+    &.completed, &.didnotcomplete {
+      background: {
+        repeat:no-repeat;
+        position:right 5px center;
+      }
+    }
+    &.completed {
+      background-image:url('../images/icons/upload_success.png');
+    }
+    &.didnotcomplete {
+      background-image:url('../images/icons/upload_failure.png');
+      background-color:$errorBackColor;
+    }
+  }
+  div {
+     border: 1px solid $borderColor {
+       top:0;
+       bottom:0;
+     }
+  }
+  p {
+    display:block;
+    height:2px;
+    border:0;
+    margin:0;
+    background-image:url('../images/progress.png');
+    background-position:100% 0px;
+    overflow:hidden;
+    @include box-sizing(border-box);
+  }
+  .success {
+    background: $successBorderColor none 0 0 no-repeat;
+  }
+  .failure {
+    background: #c00 none 0 0 no-repeat;
+  }
+  .warning {
+    background:$warningBackColor;
+  }
+}
+#UploadedErrors {
+  li{
+    max-width: 400px;
+    padding: 6px 5px;
+    font-size: 15px;
+    border: 1px solid $borderColor;
+    display:block;
+    border-bottom:0;
+    vertical-align:baseline;
+    text-overflow:ellipsis;
+    transition: background-color 2000ms ease-in;
+  }
+}
+.uploadErrorDismiss {
+  width:21px;
+  height:21px;
+  margin:6px 5px 0 0;
+  float:right;
+  background: transparent url('../images/icons/upload_dismiss.png') no-repeat right bottom;
+  &:hover {
+    background-position:right top;
+    cursor:pointer;
+  }
+  span {
+    display:none;
+  }
+}
+#FormSuccess {
+  border:1px $successBorderColor solid;
+  background: lighten($successBorderColor, 50%) url('../images/icons/upload_success.png') no-repeat left 5px center;
+  margin-bottom:10px;
+  padding:6px 5px;
+  padding-left:30px;
+  font-weight:bold;
+}
+
+// inputs and buttons
+a.button {
+  display:inline-block;
+  padding:6px 15px;
+  color:$buttonColor;
+  text-decoration:none;
+  &:visited, &:hover{
+    color:$buttonColor;
+  }
+}
+button, input, textarea, select, .button {
+  &:focus {
+    outline-color:rgba(0, 0, 0, 0.1);
+  }
+}
+button, input[type='submit'], .button {
+  @include buttonFont;
+  color:$buttonColor;
+  text-transform:none;
+  border-radius:0;
+  background-color:#fffaf0;
+  border:1px solid $borderColor;
+  &:hover{
+    @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+    background-color:#faf3e5;
+    border-color:$borderDarkColor;
+  }
+}
+
+// walk page park icons
+// $info-sprite-dimensions: true;
+// @import "info/*.png";
+// @include all-info-sprites;
+// .info-sprite {
+  // display:inline-block;
+  // text-indent: 100%;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // vertical-align:middle;
+// }
+.icon-alt {
+  display:none;
+}
+.icon-On-Leash, .icon-Off-Leash, .icon-Tap-Water, .icon-River-Water, .icon-Fenced, .icon-Toilets, .icon-Wheelchair, .icon-Pushchair, .icon-Bins, .icon-Cost, .icon-Playground, .icon-No-Dogs, .icon-location, .icon-map, .icon-location-2, .icon-qrcode, .icon-image, .icon-check-alt, .icon-x-altx-alt, .icon-plus-alt, .icon-minus-alt, .icon-info, .icon-spam, .icon-directions {
+  font-family: 'dogwalks';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size:22px;
+  line-height:26px;
+}
+.icon-On-Leash:before {
+  content: "\e000";
+}
+.icon-Off-Leash:before {
+  content: "\e001";
+}
+.icon-Tap-Water:before {
+  content: "\e002";
+}
+.icon-River-Water:before {
+  content: "\e003";
+}
+.icon-Fenced:before {
+  content: "\e004";
+}
+.icon-Toilets:before {
+  content: "\e005";
+}
+.icon-Wheelchair:before {
+  content: "\e006";
+}
+.icon-Pushchair:before {
+  content: "\e007";
+}
+.icon-Bins:before {
+  content: "\e008";
+}
+.icon-Cost:before {
+  content: "\e009";
+}
+.icon-Playground:before {
+  content: "\e00a";
+}
+.icon-No-Dogs:before {
+  content: "\e00b";
+}
+.icon-location:before {
+  content: "\e013";
+}
+.icon-map:before {
+  content: "\e01b";
+}
+.icon-location-2:before {
+  content: "\e01c";
+}
+.icon-qrcode:before {
+  content: "\e019";
+}
+.icon-image:before {
+  content: "\e018";
+}
+.icon-check-alt:before {
+  content: "\e00c";
+}
+.icon-x-altx-alt:before {
+  content: "\e00d";
+}
+.icon-plus-alt:before {
+  content: "\e00e";
+}
+.icon-minus-alt:before {
+  content: "\e00f";
+}
+.icon-info:before {
+  content: "\e010";
+}
+.icon-spam:before {
+  content: "\e011";
+}
+.icon-directions:before {
+  content: "\e01a";
+}
+
+#WalkPageHeader {
+  border-bottom: 1px solid #e5e5e5;
+  overflow:hidden;
+  h1 {
+    float:left;
+    border:0;
+  }
+  #WalkIcons{
+    float:right;
+    span {
+      margin-right:6px;
+      line-height: 45px;
+    }
+  }
+}
+
+#NoDogsWarning {
+  font-size:10em;
+  line-height:1em;
+  text-align:center;
+  color:red;
+  margin-bottom:20px;
+}
+
+// walk page details table
+#WalkInfoSidebar {
+  float:right;
+  width:350px;
+  margin:0 0 10px 10px;
+  @media only screen and (max-width: 800px) {
+    width:100%;
+    float:none;
+    margin-left:0;
+  }
+}
+#WalkInfoTable {
+  width:100%;
+  tr {
+    &.info {
+      background-color:#fff;
+    }
+    &.available {
+      background-color:#F4FFF4;
+    }
+    &.unavailable {
+      background-color:#ffeded;
+      display:none;
+    }
+    &.cost {
+      background-color:#ffd700;
+    }
+  }
+  td {
+    vertical-align:middle;
+    border:0;
+    &:first-child {
+      text-align:center;
+    }
+
+  }
+  #toggleUnavailable {
+    padding:0;
+    text-transform:uppercase;
+    font-size:0.8em;
+    background-color:#ededed;
+    &:hover {
+      background-color:$borderColor;
+      cursor:pointer;
+    }
+  }
+}
+#WalkInfo label, #WalkInfo input {
+  float:left;
+  border:0;
+  background:none;
+  padding:0;
+  margin:0;
+  vertical-align:baseline;
+}
+
+// Image Galley
+#Gallery {
+  padding:0 3px 3px 0;
+  border: 1px solid #D4D4D4;
+  background-color: #ededed;
+  img, #GalleryPreview {
+    vertical-align:bottom;
+    border:1px solid #ededed;
+  }
+  a img:hover, #GalleryPreview:hover {
+  border:1px solid darken($borderColor, 20%);
+  @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+  }
+}
+#GalleryPreview {
+  height:267px;
+  a {
+    display:block;
+  }
+  img {
+    visibility:hidden;
+  }
+}
+#GalleryThumbs a {
+  display:inline-block;
+}
+#GalleryThumbs a, #GalleryPreview {
+  margin:3px 0 0 3px;
+}
+
+// No description
+#WalkContentless {
+  background-color: rgb(226, 249, 255);
+  margin-right: 360px;
+  padding: 20px;
+  border: 1px solid rgb(199, 214, 255);
+  @media only screen and (max-width: 800px) {
+    margin-right:0;
+  }
+}
+
+#Author {
+  float:left;
+  margin-top:5px;
+}
+
+#LastEdited {
+  font-style:italic;
+  float:right;
+  margin-top:5px;
+}
+
+// walk areas
+.invisibleCell {
+  border:0 !important;
+  background-color:transparent !important;
+}
+table.walkAreaTable {
+  border:0;
+  position:relative;
+  top:-35px;
+  th, td {
+    padding:0 2px;
+    width:30px;
+    text-align:center;
+    vertical-align:middle;
+  }
+  .walkAreaTableTitle {
+    width:auto;
+    text-align:left;
+    padding:5px;
+  }
+  [data-icon]:after {
+    font-size:13px;
+  }
+  .rateit {
+    height:16px;
+    display:block;
+  }
+}

@@ -1,0 +1,90 @@
+@import url(reset.css);
+@import url("http://fonts.googleapis.com/css?family=Finger+Paint");
+@import url("http://fonts.googleapis.com/css?family=Lobster");
+@import url("http://fonts.googleapis.com/css?family=Bree+Serif");
+@import url("http://fonts.googleapis.com/css?family=Alef");
+@import url("http://fonts.googleapis.com/css?family=Merienda:400,700");
+@import url("http://fonts.googleapis.com/css?family=Paprika");
+body {
+  color: #000;
+  background: none;
+  background-color: #fff;
+  font-size: 14pt;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.noprint, nav, footer, noscript {
+  display: none;
+}
+
+.main {
+  padding: 0;
+}
+
+.inner {
+  padding: 0;
+}
+
+.content-container {
+  width: 100%;
+  float: left;
+}
+
+#WalkPageHeader {
+  margin-bottom: 15px;
+}
+
+#WalkInfoTable td:first-child {
+  text-align: left;
+}
+
+#map-static.hidden {
+  display: block;
+  visibility: visible;
+}
+#map-static img {
+  width: 100%;
+}
+
+/* Based on HTML5 boilerplate print styles */
+* {
+  color: black !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -ms-filter: none !important;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2,
+h3 {
+  page-break-after: avoid;
+}
+
+/* Simple theme custom print styles */
+.header,
+.footer,
+.nav-open-button,
+.search-bar,
+.search-dropdown-icon,
+nav.primary {
+  display: none;
+}
