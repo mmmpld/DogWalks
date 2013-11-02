@@ -35,11 +35,6 @@ class WalkNear_Controller extends WalkHolder_Controller {
     $markerUserIcon = Director::BaseURL().'/themes/dogwalks/images/map/marker_user.png';
     $markerLocalIcon = Director::BaseURL().'/themes/dogwalks/images/map/marker_local.png';
 
-    // TODO remove once live http://imgur.com/delete/OY0UTn3sL9qvlTF http://imgur.com/delete/i5jndl2LpWX6h7g http://imgur.com/delete/r0m0PWR35uzrfhH
-    //$markerIcon = 'http://i.imgur.com/QEH0WH7.png';
-    $markerUserIcon = 'http://i.imgur.com/cDgBaTU.png';
-    $markerLocalIcon = 'http://i.imgur.com/UH3rwuP.png';
-
     $base = 'https://maps.googleapis.com/maps/api/staticmap?';
     $params = '&visual_refresh=true&size=640x400&scale=2&sensor=true';
 

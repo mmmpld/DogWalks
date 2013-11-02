@@ -155,11 +155,6 @@ class WalkPage_Controller extends WalkAreaHolder_Controller {
     $markerUserIcon = Director::BaseURL().'/themes/dogwalks/images/map/marker_user.png';
     $markerLocalIcon = Director::BaseURL().'/themes/dogwalks/images/map/marker_local.png';
 
-    // TODO remove
-    $markerIcon = 'http://i.imgur.com/QEH0WH7.png';
-    $markerUserIcon = 'http://i.imgur.com/cDgBaTU.png';
-    $markerLocalIcon = 'http://i.imgur.com/UH3rwuP.png';
-
     $markerLatLng = $this->Lat.','.$this->Lng;
 
     return $base.urlencode('icon:'.$markerIcon.'&chld=walk|'.$markerLatLng).$params;

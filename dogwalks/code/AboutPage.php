@@ -18,7 +18,7 @@ class AboutPage_Controller extends Page_Controller {
 
   public function submit($data, $form) {
     $email = new Email();
-    $email->setTo('contact@dogwalks.co.nz'); //TODO email address
+    $email->setTo('webmaster@dogwalks.co.nz');
     $email->setFrom($data['Email']);
     $email->setSubject("Contact Message from {$data["Name"]}");
     $messageBody = "

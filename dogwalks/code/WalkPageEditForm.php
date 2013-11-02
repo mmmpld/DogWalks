@@ -49,7 +49,7 @@ class WalkPageEditForm extends Form {
 
     $email = new Email();
 
-    $email->setTo('richardmolloy+dogwalks@gmail.com'); // TODO
+    $email->setTo('webmaster@dogwalks.co.nz');
     $email->setFrom($data['Email']);
     $email->setSubject("Walk suggestion from {$data["Name"]}");
 
@@ -180,7 +180,7 @@ class WalkPageEditForm extends Form {
       <p><strong>Message:</strong> {$data['Message']}</p>
     ";
     $email->setBody($messageBody);
-    //$email->send(); // TODO disabled for testing
+    $email->send();
 
     // temp dir cleanup
     $cleanupTempDir = true; // Remove old files
