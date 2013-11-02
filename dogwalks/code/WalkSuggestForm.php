@@ -50,7 +50,7 @@ class WalkSuggestForm extends Form {
     $email = new Email();
 
     $email->setTo('webmaster@dogwalks.co.nz');
-    $email->setFrom($data['Email']);
+    $email->replyTo($data['Email']);
     $email->setSubject("Walk suggestion from {$data["Name"]}");
 
     $editID = $data['ID'];
@@ -181,7 +181,7 @@ class WalkSuggestForm extends Form {
     }
 
     $messageBody = "
-      <h1>A new walk has been suggested!</h1>
+      <h1>{$data['Title']} has been " . ($editID ? "updated" : "suggested") . "!</h1>
       <p><strong>Name:</strong> {$data['Name']}</p>
       <p><strong>Email:</strong> {$data['Email']}</p>
       <p><strong>Message:</strong> {$data['Message']}</p>
