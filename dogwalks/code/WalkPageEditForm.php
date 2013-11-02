@@ -174,7 +174,7 @@ class WalkPageEditForm extends Form {
     }
 
     $messageBody = "
-      <h1>A new walk has been suggested!</h1>
+      <h1>{$data['Walk-Name']} has been updated!</h1>
       <p><strong>Name:</strong> {$data['Name']}</p>
       <p><strong>Email:</strong> {$data['Email']}</p>
       <p><strong>Message:</strong> {$data['Message']}</p>
@@ -201,7 +201,7 @@ class WalkPageEditForm extends Form {
 
     return array(
       'Content' => 'Thanks for the suggestion. ' . (($data['Email'])? 'We\'ll let you know as soon as it is available on the site.' : 'We\'ll add it to the site shortly. ' ),
-      'SuggestForm' => $dataPrint//''
+      'SuggestForm' => '' //$dataPrint
     );
   }
 
