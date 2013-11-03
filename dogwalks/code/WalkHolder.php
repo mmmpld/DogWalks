@@ -12,7 +12,7 @@ class WalkHolder_Controller extends Page_Controller {
     if ($Radius == NULL) {$Radius = 0.2;}
 
     // walk location
-    if ($this->Class == 'WalkPage' || $this->Class == 'WalkSuggestPage') {
+    if ($this->ClassName == 'WalkPage') {
       $LatThis = $this->Lat;
       $LngThis = $this->Lng;
     } else {
