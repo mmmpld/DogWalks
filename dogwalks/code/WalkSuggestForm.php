@@ -166,12 +166,10 @@ class WalkSuggestForm extends Form {
           return $this->redirectBack();
         }
         $fileID = $fileObj->ID;
-        echo $fileID;
         if (isset($fileID)) {
+          echo $fileID . '{file page}' . $pageID;
           // DB::query("INSERT INTO \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
         }
-        echo " was inserted";
-        // if (1==2) {
         if ($fileObj && !$data['Lat'] && !$data['Lng']) {
           $exifGPS = $this->getExifLonLat($fileObj->getFullPath());
           if ($exifGPS) {
@@ -180,7 +178,6 @@ class WalkSuggestForm extends Form {
             $page->writeToStage('Stage');
           }
         }
-        // } else {echo "1 != 2";} // end 1==2
       }
     }
 
