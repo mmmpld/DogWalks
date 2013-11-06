@@ -96,7 +96,7 @@ class WalkSuggestForm extends Form {
        * ajax uploaded files
        */
       foreach ($UploadedImages as $file) {
-        $parentID = 21; // assets/walks/submitted/ folder
+        $parentID = 129; // assets/walks/submitted/ folder
         $ownerID = 2; // content editors group
         $className = 'Image';
         $name = $file;
