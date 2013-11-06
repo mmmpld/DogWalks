@@ -9,6 +9,9 @@ class WalkSuggestPage_Controller extends Page_Controller {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
     if ($fn) { // ajax upload
       $uploadDir = Director::baseFolder() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'walks' . DIRECTORY_SEPARATOR . 'submitted' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
+      
+      echo $uploadDir;
+      exit();
 
       $file = file_get_contents('php://input');
       if (!$file && $_FILES) {
