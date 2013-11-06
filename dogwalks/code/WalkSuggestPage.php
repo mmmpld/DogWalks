@@ -7,11 +7,8 @@ class WalkSuggestPage_Controller extends Page_Controller {
   static $allowed_actions = array('suggested');
   public function suggested() {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
-    if ($fn || 1==1) { // ajax upload
+    if ($fn) { // ajax upload
       $uploadDir = Director::baseFolder() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'walks' . DIRECTORY_SEPARATOR . 'submitted' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
-      
-      echo $uploadDir;
-      exit();
 
       $file = file_get_contents('php://input');
       if (!$file && $_FILES) {
@@ -19,8 +16,7 @@ class WalkSuggestPage_Controller extends Page_Controller {
           if ($_FILES['UploadedFiles']['tmp_name']) {
             if ($_FILES['UploadedFiles']['tmp_name'][0]) {
               $file = file_get_contents($_FILES['UploadedFiles']['tmp_name'][0]);
-              // file_put_contents($uploadDir . $fn, $file);
-              file_put_contents($uploadDir, $file);
+              file_put_contents($uploadDir . $fn, $file);
               echo "$fn uploaded";
               exit();
             } else {
@@ -33,8 +29,8 @@ class WalkSuggestPage_Controller extends Page_Controller {
           echo 'UploadedFiles not found';
         }
       }
-      // file_put_contents($uploadDir . $fn, $file);
-      // echo "$fn uploaded";
+      file_put_contents($uploadDir . $fn, $file);
+      echo "$fn uploaded";
       exit();
     } else { // normal form handling
       return new WalkSuggestForm($this, 'suggested');
