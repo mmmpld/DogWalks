@@ -122,8 +122,6 @@ class WalkSuggestForm extends Form {
         }
         $fileObj = File::find($uploadDir.$filename);
         if ($fileObj) {
-          echo 'fileObj set';
-          // //print_r($fileObj);
           if (isset($fileObj) && !$data['Lat'] && !$data['Lng']) {
             setLatLng($fileObj);
           }
