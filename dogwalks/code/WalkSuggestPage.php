@@ -3,8 +3,11 @@ class WalkSuggestPage extends Page {
   static $icon = "themes/dogwalks/images/icons/walk-file.png";
 }
 
+
 class WalkSuggestPage_Controller extends Page_Controller {
   static $allowed_actions = array('suggested');
+
+  // Not sure if this is needed anymore as the ajax/form split is handled by WalkPage.php
   public function suggested() {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
     echo $fn;
@@ -34,8 +37,7 @@ class WalkSuggestPage_Controller extends Page_Controller {
       echo "$fn uploaded";
       exit();
     } else { // normal form handling
-      echo "not ajax. HTTP_X_FILENAME=" . $_SERVER['HTTP_X_FILENAME'];
-      //return new WalkSuggestForm($this, 'suggested');
+      return new WalkSuggestForm($this, 'suggested');
     }
   }
 }
