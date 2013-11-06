@@ -166,11 +166,11 @@ class WalkSuggestForm extends Form {
           return $this->redirectBack();
         }
         $fileID = $fileObj->ID;
-        echo $fileID
+        echo $fileID;
         if (isset($fileID)) {
           DB::query("INSERT \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
         }
-        echo " was inserted"
+        echo " was inserted";
         // if (1==2) {
         if ($fileObj && !$data['Lat'] && !$data['Lng']) {
           $exifGPS = $this->getExifLonLat($fileObj->getFullPath());
