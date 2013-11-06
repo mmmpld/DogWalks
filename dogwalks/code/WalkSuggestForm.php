@@ -169,6 +169,7 @@ class WalkSuggestForm extends Form {
         if (isset($fileID)) {
           echo $fileID . '{file page}' . $pageID;
           // DB::query("INSERT INTO \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
+          DB::query("INSERT INTO walkpage_images (ImageID, WalkPageID) VALUES ('$fileID', '$pageID')";
         }
         if ($fileObj && !$data['Lat'] && !$data['Lng']) {
           $exifGPS = $this->getExifLonLat($fileObj->getFullPath());
