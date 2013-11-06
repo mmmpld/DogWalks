@@ -9,14 +9,15 @@ class WalkSuggestPage_Controller extends Page_Controller {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
     if ($fn) { // ajax upload
       $uploadDir = Director::baseFolder() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'walks' . DIRECTORY_SEPARATOR . 'submitted' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
-      echo $uploadDir;
+
       $file = file_get_contents('php://input');
       if (!$file && $_FILES) {
         if ($_FILES['UploadedFiles']) {
           if ($_FILES['UploadedFiles']['tmp_name']) {
             if ($_FILES['UploadedFiles']['tmp_name'][0]) {
               $file = file_get_contents($_FILES['UploadedFiles']['tmp_name'][0]);
-              file_put_contents($uploadDir . $fn, $file);
+              // file_put_contents($uploadDir . $fn, $file);
+              file_put_contents($uploadDir, $file);
               echo "$fn uploaded";
               exit();
             } else {
@@ -29,8 +30,8 @@ class WalkSuggestPage_Controller extends Page_Controller {
           echo 'UploadedFiles not found';
         }
       }
-      file_put_contents($uploadDir . $fn, $file);
-      echo "$fn uploaded";
+      // file_put_contents($uploadDir . $fn, $file);
+      // echo "$fn uploaded";
       exit();
     } else { // normal form handling
       return new WalkSuggestForm($this, 'suggested');
