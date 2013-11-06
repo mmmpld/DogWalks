@@ -34,7 +34,8 @@ class WalkSuggestPage_Controller extends Page_Controller {
       echo "$fn uploaded";
       exit();
     } else { // normal form handling
-      return new WalkSuggestForm($this, 'suggested');
+      echo "not ajax. HTTP_X_FILENAME=" . $_SERVER['HTTP_X_FILENAME'];
+      //return new WalkSuggestForm($this, 'suggested');
     }
   }
 }
