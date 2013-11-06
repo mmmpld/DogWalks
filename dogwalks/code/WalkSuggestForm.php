@@ -118,7 +118,7 @@ class WalkSuggestForm extends Form {
           $fileID = $image->ID;
         }
         if (isset($fileID)) {
-          DB::query("INSERT \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
+          DB::query("INSERT INTO WalkPage_Images (ImageID, WalkPageID) VALUES ('$fileID', '$pageID')");
         }
         $fileObj = File::find($uploadDir.$filename);
         if ($fileObj) {
@@ -167,7 +167,6 @@ class WalkSuggestForm extends Form {
         }
         $fileID = $fileObj->ID;
         if (isset($fileID) && isset($pageID)) {
-          // DB::query("INSERT INTO \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
           DB::query("INSERT INTO WalkPage_Images (ImageID, WalkPageID) VALUES ('$fileID', '$pageID')");
         }
         if ($fileObj && !$data['Lat'] && !$data['Lng']) {
