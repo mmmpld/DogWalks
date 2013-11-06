@@ -130,7 +130,8 @@ class WalkSuggestForm extends Form {
         }
       }
     } else if (isset($data['Walk-Image'])) {
-      if ($data['Walk-Image']['error'] == 0) {
+      echo "simple file upload";
+      if ($data['Walk-Image']['error'] == 0 && 1==2) {
         /*
          * oldstyle uploader fallback
          * create new single file array from file uploads array
