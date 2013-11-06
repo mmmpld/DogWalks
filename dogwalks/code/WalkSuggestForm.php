@@ -168,7 +168,7 @@ class WalkSuggestForm extends Form {
         $fileID = $fileObj->ID;
         echo $fileID;
         if (isset($fileID)) {
-          DB::query("INSERT INTO \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
+          // DB::query("INSERT INTO \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
         }
         echo " was inserted";
         // if (1==2) {
