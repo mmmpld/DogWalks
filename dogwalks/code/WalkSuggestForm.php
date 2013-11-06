@@ -130,8 +130,7 @@ class WalkSuggestForm extends Form {
         }
       }
     } else if (isset($data['Walk-Image'])) {
-      echo "simple file upload";
-      if ($data['Walk-Image']['error'] == 0 && 1==2) {
+      if ($data['Walk-Image']['error'] == 0) {
         /*
          * oldstyle uploader fallback
          * create new single file array from file uploads array
@@ -167,6 +166,7 @@ class WalkSuggestForm extends Form {
           return $this->redirectBack();
         }
         $fileID = $fileObj->ID;
+        if (1==2) {
         if (isset($fileID)) {
           DB::query("INSERT \"walkpage_images\" SET \"ImageID\"='$fileID', \"WalkPageID\"='$pageID'");
         }
@@ -178,6 +178,7 @@ class WalkSuggestForm extends Form {
             $page->writeToStage('Stage');
           }
         }
+        } // end 1==2
       }
     }
 
