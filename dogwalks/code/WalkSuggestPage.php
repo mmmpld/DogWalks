@@ -8,9 +8,6 @@ class WalkSuggestPage_Controller extends Page_Controller {
   public function suggested() {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
     if ($fn) { // ajax upload
-
-      ini_set("max_input_vars", 200);
-
       $uploadDir = Director::baseFolder() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'walks' . DIRECTORY_SEPARATOR . 'submitted' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
       echo $uploadDir;
       $file = file_get_contents('php://input');

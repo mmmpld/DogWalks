@@ -1,6 +1,6 @@
 <% require javascript('themes/dogwalks/javascript/min/googlemaps.min.js') %>
 <% require javascript('themes/dogwalks/javascript/min/jquery.exif.min.js') %>
-<% require javascript('themes/dogwalks/javascript/min/walkUpload.min.js') %>
+<% require javascript('themes/dogwalks/javascript/walkUpload.js') %>
 <% require javascript('themes/dogwalks/javascript/min/suggestMap.min.js') %>
 <script type="text/javascript" charset="utf-8">
   var Lat

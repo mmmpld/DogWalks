@@ -228,6 +228,7 @@ function UploadFile(file, count) {
     xhr.open("POST", FormName.action, true);
     xhr.setRequestHeader("X_FILENAME", file.name);
     // xhr.send(file);
+    console.log("sending file form");
     formData = new FormData(FormName);
     formData.append("SecurityID", $(SecurityID).val());
     formData.append("UploadedFiles[]", file, file.name);
