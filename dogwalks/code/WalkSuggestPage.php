@@ -7,7 +7,7 @@ class WalkSuggestPage_Controller extends Page_Controller {
   static $allowed_actions = array('suggested');
   public function suggested() {
     $fn = (isset($_SERVER['HTTP_X_FILENAME']) ? $_SERVER['HTTP_X_FILENAME'] : false);
-    if ($fn) { // ajax upload
+    if ($fn || 1=1) { // ajax upload
       $uploadDir = Director::baseFolder() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'walks' . DIRECTORY_SEPARATOR . 'submitted' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
       
       echo $uploadDir;
